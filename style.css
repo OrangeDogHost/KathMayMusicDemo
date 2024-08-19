@@ -687,8 +687,47 @@ p {
         font-size: 2rem;
         text-align: center;
     }
-    
-
 }
+
+@media screen and (min-width: 481px) and (max-width: 1120px) {
+    #hero #desktop-nav {
+        background-color: green;
+    }
+
+    #hero .main-content .img-container img {
+        width: 500px;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    #hero .main-content .intro {
+        text-align: center;
+    }
+
+    .player,.progress-container {
+        margin: 0 auto;
+    }
+
+    #hero .main-content {
+        flex-direction: column;
+        padding: 50px 50px;
+    }
+
+    .biography {
+        padding: 0;
+    }
+
+    .form-container {
+        padding: 0;
+    }
+
+   
+
+    .contact {
+        flex-direction: column;
+    }
+}
+
+
 
 /* figure out why there is overflow on mobile */
