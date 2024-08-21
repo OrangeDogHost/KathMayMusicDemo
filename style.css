@@ -117,7 +117,7 @@ p {
 }
 
 #hero .main-content .intro h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
 }
 
 #hero .main-content .intro h2 {
@@ -714,14 +714,29 @@ p {
     }
 
     .biography {
-        padding: 0;
+        padding: 50px 100px;
+    }
+
+    .biography .img {
+        top: 50%;
+    }
+
+    .biography .blurb {
+        text-align: center;
+        padding: 0 20px;
     }
 
     .form-container {
         padding: 0;
     }
 
-   
+   .background {
+    height: auto;
+   }
+
+   .gig-container {
+    padding: 40px 33px
+   }
 
     .contact {
         flex-direction: column;
