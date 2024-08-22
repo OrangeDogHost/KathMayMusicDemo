@@ -94,11 +94,24 @@ const parallaxChild = document.querySelector('.parallax-child');
 
 const hamburger = document.querySelector(".hamburger");
 const mobileNav = document.querySelector("#mobile-nav");
-
+let openedMenu = false;
 
 
 hamburger.addEventListener("click", function () {
-    console.log("Clicked and do something now")
+    openedMenu = !openedMenu;
+    if(openedMenu) {
+        mobileNav.style.animationName = 'growMenu'
+        mobileNav.style.animationPlayState = 'running';
+        mobileNav.addEventListener('animationend', () => {
+            mobileNav.style.animationPlayState = 'paused';
+        })
+    }else{
+        mobileNav.style.animationName = 'shrinkMenu'; 
+        mobileNav.style.animationPlayState = 'running';
+        mobileNav.addEventListener('animationend', () => {
+            mobileNav.style.animationPlayState = 'paused';
+        })
+    }
 });
 
 

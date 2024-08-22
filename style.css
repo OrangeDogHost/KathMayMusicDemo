@@ -531,7 +531,6 @@ p {
         display: flex;
         justify-content: center;
         align-items: center;
-        animation-name: growMenu;
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
         animation-play-state: paused;
@@ -549,7 +548,7 @@ p {
         }
     }
 
-    @keyframes shirnkMenu {
+    @keyframes shrinkMenu {
         0%{
             height: 1000px;
             width: 1000px;
