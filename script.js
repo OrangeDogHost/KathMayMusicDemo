@@ -109,7 +109,7 @@ hamburger.addEventListener("click", function () {
         mobileNav.style.animationName = 'shrinkMenu'; 
         mobileNav.style.animationPlayState = 'running';
         mobileNav.addEventListener('animationend', () => {
-            mobileNav.style.animationPlayState = 'paused';=
+            mobileNav.style.animationPlayState = 'paused';
         })
     }
 });
@@ -135,5 +135,5 @@ menuLinks.forEach(link => {
 })
 
 
-//Code for email form
+
 
