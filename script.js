@@ -98,27 +98,7 @@ const mobileNav = document.querySelector("#mobile-nav");
 
 
 hamburger.addEventListener("click", function () {
-  mobileNav.style.animationPlayState = "running";
-
-  mobileNav.addEventListener("animationend", () => {
-    setTimeout(() => {
-      mobileNav.insertAdjacentHTML(
-        "beforeend",
-        `<div class="nav-container">
-        <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-        </ul>
-        </div>`
-      );
-    }, 150);
-
-    setTimeout(() => {
-      document.querySelector(".nav-container").classList.add("show");
-    }, 150);
-  });
+    console.log("Clicked and do something now")
 });
 
 

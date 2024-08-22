@@ -549,6 +549,17 @@ p {
         }
     }
 
+    @keyframes shirnkMenu {
+        0%{
+            height: 1000px;
+            width: 1000px;
+        }
+        100%{
+            height: 200px;
+            width: 200px;
+        }
+    }
+
 
 
      #mobile-nav .hamburger {
@@ -689,7 +700,7 @@ p {
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 1120px) {
+@media screen and (min-width: 481px) and (max-width: 1280px) {
     #hero #desktop-nav {
         background-color: green;
     }
@@ -740,6 +751,11 @@ p {
 
     .contact {
         flex-direction: column;
+    }
+
+    input[type="submit"] {
+        transform: translate(0);
+        margin-bottom: 20px;
     }
 }
 
