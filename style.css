@@ -612,37 +612,6 @@ p {
     }
 
 
-
-    /* #mobile-nav .nav-container {
-        position: absolute;
-        top: 848px;
-        left: 592px;
-    } */
-
-    /* #mobile-nav .nav-container {
-        position: absolute;
-        top: 638px;
-        left: 592px;
-        font-size: 2rem;
-        font-family: var(--main-font);
-        text-align: center;
-        transform: translateX(0%);
-        transition: transform 1.5s ease;
-    } */
-/* 
-    #mobile-nav .nav-container.show {
-        transform: translateX(0);
-    } */
-/* 
-    #mobile-nav .nav-container ul li {
-        padding: 10px 0;
-        text-shadow: 4px 4px 4px black;
-    }
-
-    #mobile-nav .nav-container ul li a {
-        color: white;
-    } */
-
     #hero .main-content {
         padding: 112px 0;
         flex-direction: column;
@@ -737,6 +706,10 @@ p {
     .slide {
         font-size: 2rem;
         text-align: center;
+    }
+
+    #testimonials .slide {
+        padding: 0 20px;
     }
 }
 
