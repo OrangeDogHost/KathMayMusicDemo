@@ -742,7 +742,7 @@ p {
 
 @media screen and (min-width: 481px) and (max-width: 1280px) {
     #hero #desktop-nav {
-        background-color: green;
+       
     }
 
     #hero .main-content .img-container img {
@@ -778,7 +778,7 @@ p {
     }
 
     .form-container {
-        padding: 0;
+        padding: 50px;
     }
 
    .background {

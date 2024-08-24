@@ -172,7 +172,9 @@
                 <small>All enquiries use the contact form below</small>
             </div>
             <div class="contact">
-                <form action="https://formsubmit.co/" method="post">
+                <form id="contactForm" action="https://formsubmit.co/kia-kaha@hotmail.co.nz" method="POST">
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5501/thankyou.html">
+                    <input type="hidden" name="_subject" value="New submission!">
                     <div class="form-group">
                       <label for="name">Name:</label>
                       <input type="text" id="name" name="name">
@@ -186,6 +188,7 @@
                       <textarea id="message" name="message"></textarea>
                     </div>
                     <input type="submit" value="Send">
+                  
                   </form>
                   <div class="contact-info">
                     <h2>Kath May | Singer </h2>
@@ -195,15 +198,12 @@
             </div>
         </div>
     </section>
+    <script>
+         
+      
+       
+    </script>
     <p style="text-align: center; background-color:black; color: white; padding: 20px 0;">Kath May &copy; All Rights Reserved 2025</p>
-
-  </body>
-  <script>
-    
-
-
-
-  </script>
-  
+  </body>  
 </html>
 
