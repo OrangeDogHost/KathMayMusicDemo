@@ -533,10 +533,43 @@ p {
         align-items: center;
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
-        animation-play-state: paused;
-        opacity: 1;
+        /* animation-play-state: paused; */
+   
     }
 
+    .nav-container {
+        position: absolute;
+        color: white;
+        top: 62%;
+        left: 60%;
+        display: none;
+        border-bottom-right-radius: 50%;    
+    }
+
+   
+
+    .nav-container ul {
+        color: white;
+        position: absolute;
+        top: 67%;
+        left: 64%;
+        text-align: center;
+    }
+
+  
+
+    .nav-container ul li {
+        padding: 5px 0;
+        text-shadow: 10px 10px 10px black;
+    }
+
+    .nav-container ul li a {
+        font-family: var(--main-font);
+        font-size: 2.5rem;
+        color: white;
+     
+    }
+  
     @keyframes growMenu {
         0% {
             height: 200px;
@@ -577,6 +610,8 @@ p {
         height: 2px;
         background-color: white;
     }
+
+
 
     /* #mobile-nav .nav-container {
         position: absolute;

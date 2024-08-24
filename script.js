@@ -94,25 +94,29 @@ const parallaxChild = document.querySelector('.parallax-child');
 
 const hamburger = document.querySelector(".hamburger");
 const mobileNav = document.querySelector("#mobile-nav");
+const navContainer = document.querySelector('.nav-container');
 let openedMenu = false;
 
+hamburger.addEventListener('click', toggleMenu);
 
-hamburger.addEventListener("click", function () {
+function toggleMenu() {
     openedMenu = !openedMenu;
     if(openedMenu) {
-        mobileNav.style.animationName = 'growMenu'
-        mobileNav.style.animationPlayState = 'running';
-        mobileNav.addEventListener('animationend', () => {
-            mobileNav.style.animationPlayState = 'paused';
-        })
+       mobileNav.style.animationName = 'growMenu';
+       mobileNav.style.animationPlayState = 'running';
+       mobileNav.addEventListener('animationend', function() {
+        if(openedMenu){
+            navContainer.style.display = 'block';
+            document.querySelector('.nav-container ul').classList.add('show');
+        }   
+       })
     }else{
-        mobileNav.style.animationName = 'shrinkMenu'; 
-        mobileNav.style.animationPlayState = 'running';
-        mobileNav.addEventListener('animationend', () => {
-            mobileNav.style.animationPlayState = 'paused';
-        })
+        mobileNav.style.animationName = 'shrinkMenu';
+        navContainer.style.display = 'none';
     }
-});
+}
+
+
 
 //Code for smooth scrolling
 
