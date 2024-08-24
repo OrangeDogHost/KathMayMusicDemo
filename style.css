@@ -531,13 +531,45 @@ p {
         display: flex;
         justify-content: center;
         align-items: center;
-        animation-name: growMenu;
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
-        animation-play-state: paused;
-        opacity: 1;
+        /* animation-play-state: paused; */
+   
     }
 
+    .nav-container {
+        position: absolute;
+        color: white;
+        top: 62%;
+        left: 60%;
+        display: none;
+        border-bottom-right-radius: 50%;    
+    }
+
+   
+
+    .nav-container ul {
+        color: white;
+        position: absolute;
+        top: 67%;
+        left: 64%;
+        text-align: center;
+    }
+
+  
+
+    .nav-container ul li {
+        padding: 5px 0;
+        text-shadow: 10px 10px 10px black;
+    }
+
+    .nav-container ul li a {
+        font-family: var(--main-font);
+        font-size: 2.5rem;
+        color: white;
+     
+    }
+  
     @keyframes growMenu {
         0% {
             height: 200px;
@@ -546,6 +578,17 @@ p {
         100%{
             height: 1000px;
             width: 1000px;
+        }
+    }
+
+    @keyframes shrinkMenu {
+        0%{
+            height: 1000px;
+            width: 1000px;
+        }
+        100%{
+            height: 200px;
+            width: 200px;
         }
     }
 
@@ -568,21 +611,29 @@ p {
         background-color: white;
     }
 
-    #mobile-nav .nav-container {
+
+
+    /* #mobile-nav .nav-container {
+        position: absolute;
+        top: 848px;
+        left: 592px;
+    } */
+
+    /* #mobile-nav .nav-container {
         position: absolute;
         top: 638px;
         left: 592px;
         font-size: 2rem;
         font-family: var(--main-font);
         text-align: center;
-        transform: translateX(-200%);
+        transform: translateX(0%);
         transition: transform 1.5s ease;
-    }
-
+    } */
+/* 
     #mobile-nav .nav-container.show {
         transform: translateX(0);
-    }
-
+    } */
+/* 
     #mobile-nav .nav-container ul li {
         padding: 10px 0;
         text-shadow: 4px 4px 4px black;
@@ -590,7 +641,7 @@ p {
 
     #mobile-nav .nav-container ul li a {
         color: white;
-    }
+    } */
 
     #hero .main-content {
         padding: 112px 0;
@@ -689,7 +740,7 @@ p {
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 1120px) {
+@media screen and (min-width: 481px) and (max-width: 1280px) {
     #hero #desktop-nav {
         background-color: green;
     }
@@ -740,6 +791,11 @@ p {
 
     .contact {
         flex-direction: column;
+    }
+
+    input[type="submit"] {
+        transform: translate(0);
+        margin-bottom: 20px;
     }
 }
 

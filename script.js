@@ -94,32 +94,28 @@ const parallaxChild = document.querySelector('.parallax-child');
 
 const hamburger = document.querySelector(".hamburger");
 const mobileNav = document.querySelector("#mobile-nav");
+const navContainer = document.querySelector('.nav-container');
+let openedMenu = false;
 
+hamburger.addEventListener('click', toggleMenu);
 
+function toggleMenu() {
+    openedMenu = !openedMenu;
+    if(openedMenu) {
+       mobileNav.style.animationName = 'growMenu';
+       mobileNav.style.animationPlayState = 'running';
+       mobileNav.addEventListener('animationend', function() {
+        if(openedMenu){
+            navContainer.style.display = 'block';
+            document.querySelector('.nav-container ul').classList.add('show');
+        }   
+       })
+    }else{
+        mobileNav.style.animationName = 'shrinkMenu';
+        navContainer.style.display = 'none';
+    }
+}
 
-hamburger.addEventListener("click", function () {
-  mobileNav.style.animationPlayState = "running";
-
-  mobileNav.addEventListener("animationend", () => {
-    setTimeout(() => {
-      mobileNav.insertAdjacentHTML(
-        "beforeend",
-        `<div class="nav-container">
-        <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-        </ul>
-        </div>`
-      );
-    }, 150);
-
-    setTimeout(() => {
-      document.querySelector(".nav-container").classList.add("show");
-    }, 150);
-  });
-});
 
 
 //Code for smooth scrolling
@@ -143,5 +139,5 @@ menuLinks.forEach(link => {
 })
 
 
-//Code for email form
+
 
