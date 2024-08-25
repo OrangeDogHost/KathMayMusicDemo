@@ -5,12 +5,10 @@ const playBtn = document.querySelector("#playIcon");
 const backwardBtn = document.querySelector(".backward-btn");
 const forwardBtn = document.querySelector(".forward-btn");
 const songs = [
-  "background",
-  "countdown",
-  "flamenco",
-  "tokyo",
-  "upbeat",
-  "village",
+  "dreams",
+  "standback",
+  "gypsy",
+  "sara"
 ];
 
 const progressContainer = document.querySelector('.progress-container'); 
@@ -21,12 +19,12 @@ const songTitle = document.querySelector('.song-titles h3');
 let SONG_URL = "./assets/music/";
 let songIndex = 0;
 let playingState = false;
-let songUrl = `${SONG_URL}${songs[songIndex]}.mp3`;
+let songUrl = `${SONG_URL}${songs[songIndex]}.m4a`;
 
 
 
 playBtn.addEventListener('click', () => {
-    let songPlayingUrl = SONG_URL + songs[songIndex] + '.mp3';
+    let songPlayingUrl = SONG_URL + songs[songIndex] + '.m4a';
     playingState = !playingState;
 
     showSong();
@@ -52,7 +50,7 @@ forwardBtn.addEventListener('click', () => {
     }
 
     if(playingState) {
-        audio.setAttribute('src', SONG_URL + songs[songIndex] + '.mp3');
+        audio.setAttribute('src', SONG_URL + songs[songIndex] + '.m4a');
         audio.play(); 
         showSong();
     }
@@ -65,7 +63,7 @@ backwardBtn.addEventListener('click', () => {
     }
 
     if(playingState) {
-        audio.setAttribute('src', SONG_URL + songs[songIndex] + '.mp3');
+        audio.setAttribute('src', SONG_URL + songs[songIndex] + '.m4a');
         audio.play();
         showSong();   
     }
