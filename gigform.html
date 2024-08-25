@@ -4,9 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Main Site</title>
+    <style>
+        body {
+            background-color: #601e4f;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        form {
+            width: 20%;
+        }
+
+        form label, button {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            height: 30px;
+            outline: none;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button {
+            width: 50%;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+
+    </style>
 </head>
 <body>
-    <form action="/form-submit" method="post">
+    <h1>Enter Your Details Below To Update Your Site</h1>
+    <form action="/formsubmit" method="post">
         <label for="" aria-placeholder="Enter Data">Event Name</label>
         <input type="text" name="eventName">
         <label for="" aria-placeholder="Enter Data">Venue</label>
@@ -17,7 +59,9 @@
         <input type="text" name="eventDate">
         <label for="" aria-placeholder="Enter Data">Event Price</label>
         <input type="text" name="eventPrice">
-        <button type="submit">Click Me</button>
+        <label for="">Event Details</label>
+        <textarea id="" name="eventDescription"></textarea>
+        <button type="submit">Click To Update</button>
     </form>
 </body>
 </html>
