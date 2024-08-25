@@ -714,9 +714,7 @@ p {
 }
 
 @media screen and (min-width: 481px) and (max-width: 1280px) {
-    #hero #desktop-nav {
-       
-    }
+   
 
     #hero .main-content .img-container img {
         width: 500px;
