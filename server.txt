@@ -39,3 +39,37 @@ app.post('/form-submit', (req, res) => {
 app.listen(port, () => {
     console.log("Listening on port 3000")
 })
+
+
+   <div class="gig-container">
+            <h3 style="color: white">Events and <span>Gigs</span></h3>
+            <div class="gig-info">                
+                <div class="info info-1">
+                    <span>$<%= eventDetails.eventPrice %></span>
+                    <img src="assets/01.jpg" alt="">
+                    <div class="details">
+                        <h2><%= eventDetails.eventName %></h2>
+                        <small><%= eventDetails.eventDate %> / <%= eventDetails.eventTime %> / <%= eventDetails.eventVenue %></small>
+                        <p style="color: white; font-size: 0.75rem; line-height: 20px; padding: 20px"><%= eventDetails.eventDescription %></p>
+                    </div>
+                </div>
+                <div class="info info-1">
+                    <span>$35</span>
+                    <img src="assets/02.jpg" alt="">
+                    <div class="details">
+                        <h2>Gig Info</h2>
+                        <small>23 Jul 2027 / 8:30pm / Oceanview Resort</small>
+                        <p style="color: white; font-size: 0.75rem; line-height: 20px; padding: 20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora officia nulla unde neque vitae cumque praesentium consequatur consequuntur ea eum illo iure eaque dolorum nostrum accusamus, distinctio, recusandae ipsum dolorem ratione. Consequatur quam hic ipsam cum temporibus sit, repellendus dignissimos sint quae asperiores ad dolor neque, saepe facilis, aliquam est!</p>
+                    </div>
+                </div>
+                <div class="info info-1">
+                    <span>$45</span>
+                    <img src="assets/03.jpg" alt="">
+                    <div class="details">
+                        <h2>Gig Info</h2>
+                        <small>19 Mar 2028 / 7:45pm / Lakeside Pavilion</small>
+                        <p style="color: white; font-size: 0.75rem; line-height: 20px; padding: 20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora officia nulla unde neque vitae cumque praesentium consequatur consequuntur ea eum illo iure eaque dolorum nostrum accusamus, distinctio, recusandae ipsum dolorem ratione. Consequatur quam hic ipsam cum temporibus sit, repellendus dignissimos sint quae asperiores ad dolor neque, saepe facilis, aliquam est!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
