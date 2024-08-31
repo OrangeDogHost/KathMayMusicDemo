@@ -52,26 +52,33 @@ app.get("/", (req, res) => {
 
 
 app.post('/formsubmit', (req, res) => {
-    
-    const eventDetails = {
-        eventName: req.body.eventName,
-        eventVenue: req.body.eventVenue,
-        eventTime: req.body.eventTime,
-        eventDate: req.body.eventDate,
-        eventPrice: req.body.eventPrice,
-        eventDescription: req.body.eventDescription
-    };
-    const event = new Event(eventDetails);
-    event.save()
-      .then(() => {
-        Event.find().then(events => {
-            res.render('index.ejs', {events});
+    const action = req.body.action;
+
+    if(action === 'purge'){
+        Event.deleteMany({}).then(() => {
+            res.render("index.ejs", {events: []})
         })
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send('Error saving event');
-      });
+    }else{
+        const eventDetails = {
+            eventName: req.body.eventName,
+            eventVenue: req.body.eventVenue,
+            eventTime: req.body.eventTime,
+            eventDate: req.body.eventDate,
+            eventPrice: req.body.eventPrice,
+            eventDescription: req.body.eventDescription
+        };
+        const event = new Event(eventDetails);
+        event.save()
+        .then(() => {
+            Event.find().then(events => {
+                res.render('index.ejs', {events});
+            })
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error saving event');
+        });
+    }
 })
 
 app.listen(3000, () => {
