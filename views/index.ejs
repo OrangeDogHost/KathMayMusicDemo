@@ -111,7 +111,7 @@
         <div class="gig-container">
             <h3 style="color: white">Events and <span>Shows</span></h3>
             <div class="gig-info">     
-                <% if (!locals.events) { %>
+                <% if (events.length === 0) { %>
                     <div class="info info-1">
                         <span>$35</span>
                         <img src="assets/01.jpg" alt="">

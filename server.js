@@ -28,11 +28,6 @@ app.get('/updatesite', (req, res) => {
     res.sendFile(currDirname + "/gigform.html");
 })
 
-
-app.get("/", (req, res) => {
-    res.render("index.ejs")
-})
-
 const eventSchema = new mongoose.Schema({
     eventName: String,
     eventVenue: String,
@@ -43,6 +38,18 @@ const eventSchema = new mongoose.Schema({
 })
 
 const Event = mongoose.model('Event', eventSchema);
+
+
+app.get("/", (req, res) => {
+    Event.find().then(events => {
+        res.render("index.ejs", {events})
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).send("Error fetching events");
+    })
+})
+
+
 
 app.post('/formsubmit', (req, res) => {
     
