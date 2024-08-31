@@ -45,6 +45,7 @@ const eventSchema = new mongoose.Schema({
 const Event = mongoose.model('Event', eventSchema);
 
 app.post('/formsubmit', (req, res) => {
+    
     const eventDetails = {
         eventName: req.body.eventName,
         eventVenue: req.body.eventVenue,
@@ -56,8 +57,9 @@ app.post('/formsubmit', (req, res) => {
     const event = new Event(eventDetails);
     event.save()
       .then(() => {
-        console.log('Event saved successfully');
-        res.render('index.ejs', { eventDetails });
+        Event.find().then(events => {
+            res.render('index.ejs', {events});
+        })
       })
       .catch((err) => {
         console.error(err);
