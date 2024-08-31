@@ -6,7 +6,9 @@ import mongoose from 'mongoose';
 
 //Connect to mongodb
 
-mongoose.connect('mongodb://localhost:27017/KathWebsite',{
+const PORT = process.env.PORT || 3000;
+
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -81,7 +83,6 @@ app.post('/formsubmit', (req, res) => {
     }
 })
 
-app.listen(3000, () => {
-    console.log("Listening on port 3000")
-})
-
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
