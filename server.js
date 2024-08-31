@@ -2,14 +2,26 @@ import express from 'express';
 import {fileURLToPath} from 'url';
 import {dirname} from 'path';
 import bodyParser from 'body-parser';
-import session from 'express-session';
+import mongoose from 'mongoose';
+
+//Connect to mongodb
+
+mongoose.connect('mongodb://localhost:27017/KathWebsite',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection-error'));
+db.once('open', function(){
+    console.log("Connected to mongodb")
+})
 
 const currDirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended:false}));
-
 
 app.get('/updatesite', (req, res) => {
     console.log(currDirname)
@@ -21,6 +33,17 @@ app.get("/", (req, res) => {
     res.render("index.ejs")
 })
 
+const eventSchema = new mongoose.Schema({
+    eventName: String,
+    eventVenue: String,
+    eventTime: String,
+    eventDate: String,
+    eventPrice: String,
+    eventDescription: String
+})
+
+const Event = mongoose.model('Event', eventSchema);
+
 app.post('/formsubmit', (req, res) => {
     const eventDetails = {
         eventName: req.body.eventName,
@@ -29,10 +52,17 @@ app.post('/formsubmit', (req, res) => {
         eventDate: req.body.eventDate,
         eventPrice: req.body.eventPrice,
         eventDescription: req.body.eventDescription
-    }
-    console.log(eventDetails);
-    res.render('index.ejs', {eventDetails})
-    
+    };
+    const event = new Event(eventDetails);
+    event.save()
+      .then(() => {
+        console.log('Event saved successfully');
+        res.render('index.ejs', { eventDetails });
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send('Error saving event');
+      });
 })
 
 app.listen(3000, () => {
