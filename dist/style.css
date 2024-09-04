@@ -217,7 +217,7 @@ p {
 }
 
 .background {
-    background-image: url('assets/singer.jpg');
+    background-image: url('assets/singerbackground.webp');
     height: 75vh;
     width: 100vw;
     background-attachment: fixed;
@@ -461,7 +461,7 @@ p {
     outline: none;
   }
   
-  input[type="submit"] {
+  button[type="submit"] {
     width: 150px;
     height: 40px;
     background-color: var(--color-one);
@@ -474,7 +474,7 @@ p {
     transform: translateX(50%);
   }
   
-  input[type="submit"]:hover {
+  button[type="submit"]:hover {
     background-color: #571847;
   }
 
@@ -679,8 +679,8 @@ p {
 
     .form-group {
         flex-direction: column;
-      
     }
+
 
     .form-container {
         padding: 50px 30px;
@@ -702,6 +702,8 @@ p {
     input[type="submit"] {
         transform: translate(0);
     }
+
+  
 
     .slide {
         font-size: 2rem;
