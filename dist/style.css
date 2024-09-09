@@ -9,7 +9,6 @@
 
 body {
     overflow-x: hidden;
-    width: 100%;
 }
 
 * {
@@ -145,13 +144,13 @@ p {
 }
 
 .player button {
-    height: 70px;
-    width: 70px;
+    height: 10%;
+    width: 30%;
     border-radius: 50%;
     border: 1px solid var(--color-two);
     background: transparent;
     cursor: pointer;
-    /* aspect-ratio: 1/1; */
+    aspect-ratio: 1/1;
 }
 
 .player button:active {
@@ -185,7 +184,7 @@ p {
     overflow: hidden;
 }
 
-/* .song-titles::before {
+.song-titles::before {
     content: '';
     position: absolute;
     left: 0;
@@ -204,7 +203,7 @@ p {
     background: linear-gradient(to left, black, transparent);
     width: 10%;
     z-index: 2;
-} */
+}
 
 .song-titles h3 {
     transform: translateX(0%);
@@ -506,7 +505,7 @@ p {
 
 /* ======================= Media Queries Start =============== */
 
-@media screen and (min-width: 480px) and (max-width: 1281px) {
+@media screen and (max-width: 480px) {
     body {
         overflow-x: hidden;
     }
@@ -739,7 +738,7 @@ p {
     }
 
     .biography {
-        padding: 50px 30px;
+        padding: 50px 100px;
     }
 
     .biography .img {
@@ -770,36 +769,6 @@ p {
     input[type="submit"] {
         transform: translate(0);
         margin-bottom: 20px;
-    }
-}
-
-
-/* 1281 - 1732  */
-
-@media screen and (min-width: 1281px) and (max-width: 1732px) {
-   #hero .main-content {
-        padding: 0 150px;
-    }
-
-    #hero .main-content .intro {
-        padding: 62px 0;
-        text-align: center;
-    }
-
-    .player, .progress-container, .song-titles {
-        margin: 0 auto;
-    }
-
-    .biography {
-        padding: 40px 150px;
-    }
-
-    .contact {
-        margin: 0;
-    }
-
-    .contact-info {
-        margin-left: 145px;
     }
 }
 
