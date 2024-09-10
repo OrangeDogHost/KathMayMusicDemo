@@ -505,7 +505,7 @@ p {
 
 /* ======================= Media Queries Start =============== */
 
-@media screen and (min-width: 320px) and (max-width: 1281px) {
+@media screen and (max-width: 1281px) {
     body {
         overflow-x: hidden;
     }
